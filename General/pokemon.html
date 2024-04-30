@@ -4,27 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokemon Info</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="pokemon.js" defer></script>
   </head>
   <body>
-    <div
-      id="pokemon"
-      class="container mx-auto bg-white rounded-lg shadow-lg p-4 w-1/4"
-    >
-      <h2 id="name" class="text-2xl font-bold mb-2"></h2>
-      <p id="height" class="mb-2"></p>
-      <p id="weight" class="mb-4"></p>
-      <div id="abilities">
-        <h3 class="text-lg font-bold mb-2">Habilities</h3>
-        <ul>
-          <li class="mb-2">
-            <h4 class="font-bold">Nom de l'habilitat</h4>
-            <p>Descripció de l'habilitat</p>
-          </li>
-        </ul>
+    <div class="container mx-auto my-8">
+      <h1 class="text-3xl font-bold mb-4">Pokémon Info</h1>
+      <div class="flex items-center mb-4">
+        <input
+          type="text"
+          id="searchInput"
+          class="border border-gray-300 rounded-l-md px-4 py-2 w-full"
+        />
+        <button
+          id="searchButton"
+          class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r-md"
+        >
+          Search
+        </button>
       </div>
-      <img id="sprite" src="" alt="" class="mx-auto mt-" />
+      <div id="pokemon" class="bg-white rounded-lg shadow-lg p-4">
+        <h2 id="name" class="text-2xl font-bold mb-2"></h2>
+        <p id="height" class="mb-2"></p>
+        <p id="weight" class="mb-4"></p>
+        <div id="abilities">
+          <h3 class="text-lg font-bold mb-2">Habilities</h3>
+          <ul>
+            <li class="mb-2">
+              <h4 class="font-bold">Nom de l'habilitat</h4>
+              <p>Descripció de l'habilitat</p>
+            </li>
+          </ul>
+        </div>
+        <img id="sprite" src="" alt="" class="mx-auto mt-4" />
+      </div>
+      <div id="error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mt-4 hidden">
+        <p id="errorMessage"></p>
+      </div>
     </div>
-    <script src="pokemon.js"></script>
   </body>
 </html>

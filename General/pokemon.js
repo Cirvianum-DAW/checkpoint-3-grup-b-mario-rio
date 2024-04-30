@@ -69,4 +69,30 @@ async function displayPokemonInfo(id) {
     }
 }
 
-displayPokemonInfo(1);
+// ex3
+async function searchPokemon() {
+    const searchInput = document.getElementById('searchInput');
+    const searchTerm = searchInput.value.trim();
+    
+    // Comprova si s'ha introduït un terme de cerca valid
+    if (searchTerm) {
+        try {
+            // Mostra la informacio del Pokemon corresponent al terme de cerca
+            await displayPokemonInfo(searchTerm);
+            // Amaga el missatge d'error si s'ha mostrat correctament la informació
+            document.getElementById('error').classList.add('hidden');
+        } catch (error) {
+            console.error(error);
+            // Mostra el missatge d'error si hi ha hagut algíun problema
+            document.getElementById('errorMessage').textContent = error.message;
+            document.getElementById('error').classList.remove('hidden');
+        }
+    } else {
+        // Alerta si no s'ha introduït cap terme de cerca
+        alert('Fica el nom o ID del Pokemon!');
+    }
+}
+
+// Afegim un event listener al botó de cerca per cridar la funció searchPokemon quan es faci clic
+document.getElementById('searchButton').addEventListener('click', searchPokemon);
+
