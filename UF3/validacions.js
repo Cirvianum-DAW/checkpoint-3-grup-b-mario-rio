@@ -6,6 +6,7 @@ const genderSelect = document.getElementById('gender');
 const ageInput = document.getElementById('age');
 const messageInput = document.getElementById('message');
 const productSelect = document.getElementById('product');
+const priceInput = document.getElementById('price');
 const quantityInput = document.getElementById('quantity');
 const submitButton = document.querySelector('button[type="submit"]');
 
@@ -70,7 +71,7 @@ function validateAge() {
   removeExistingError(ageInput);
   const age = parseInt(ageInput.value);
   if (age < 18) {
-    displayError(ageInput, "Has de ser major d'edat per realitzar la comanda.");
+    alert("Has de ser major d'edat per realitzar la comanda.");
   }
 }
 
