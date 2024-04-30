@@ -5,6 +5,9 @@ const emailInput = document.querySelector('input[name="email"]');
 const genderSelect = document.getElementById('gender');
 const ageInput = document.getElementById('age');
 const messageInput = document.getElementById('message');
+const productSelect = document.getElementById('product');
+const quantityInput = document.getElementById('quantity');
+const submitButton = document.querySelector('button[type="submit"]');
 
 // Funció per eliminar missatges d'error existents
 function removeExistingError(input) {
@@ -80,6 +83,45 @@ function validateMessage() {
   }
 }
 
+// Validació del Producte Seleccionat
+function validateProduct() {
+  removeExistingError(productSelect);
+  const selectedProduct = productSelect.value;
+  if (selectedProduct === '') {
+    alert('Selecciona un producte vàlid.');
+    return false;
+  }
+  return true;
+}
+
+// Validació de la Quantitat
+function validateQuantity() {
+  removeExistingError(quantityInput);
+  const quantity = parseInt(quantityInput.value);
+  if (isNaN(quantity) || quantity < 1 || quantity > 10) {
+    alert('La quantitat ha de ser un nombre enter entre 1 i 10.');
+    return false;
+  }
+  return true;
+}
+// Afegir els productes dinàmicament al select
+products.forEach((product) => {
+  const option = document.createElement('option');
+  option.value = product.name;
+  option.textContent = product.name;
+  productSelect.appendChild(option);
+});
+
+// Validació Final del Formulari
+function validateForm(event) {
+  event.preventDefault();
+  const isProductValid = validateProduct();
+  const isQuantityValid = validateQuantity();
+  if (isProductValid && isQuantityValid) {
+    console.log('Formulari enviat correctament!');
+  }
+}
+
 // Afegir els esdeveniments per a les validacions
 nameInput.addEventListener('input', validateName);
 nameInput.addEventListener('blur', validateName);
@@ -92,3 +134,10 @@ ageInput.addEventListener('input', validateAge);
 ageInput.addEventListener('blur', validateAge);
 messageInput.addEventListener('input', validateMessage);
 messageInput.addEventListener('blur', validateMessage);
+productSelect.addEventListener('input', validateProduct);
+productSelect.addEventListener('blur', validateProduct);
+quantityInput.addEventListener('input', validateQuantity);
+quantityInput.addEventListener('blur', validateQuantity);
+
+// Afegir l'esdeveniment de submissió del formulari
+submitButton.addEventListener('click', validateForm);

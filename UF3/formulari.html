@@ -1,115 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Shopping Form</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header>
-      <h1 class="text-3xl my-3 font-bold text-center">Shopping Form</h1>
-    </header>
-    <form class="max-w-md mx-auto mt-8">
-      <label for="name" class="block mb-2">Name:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-      /><br /><br />
+<head>
+  <title>Shopping Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body>
+<header>
+  <h1 class="text-3xl my-3 font-bold text-center">Shopping Form</h1>
+</header>
+<form class="max-w-md mx-auto mt-8">
+  <label for="name" class="block mb-2">Name:</label>
+  <input type="text" id="name" name="name" class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" /><br /><br />
 
-      <label for="surname" class="block mb-2">Surname:</label>
-      <input
-        type="text"
-        id="surname"
-        name="surname"
-        class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-      /><br /><br />
+  <label for="surname" class="block mb-2">Surname:</label>
+  <input type="text" id="surname" name="surname" class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" /><br /><br />
 
-      <label for="email" class="block mb-2">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-      /><br /><br />
+  <label for="email" class="block mb-2">Email:</label>
+  <input type="email" id="email" name="email" class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" /><br /><br />
 
-      <label for="age" class="block mb-2">Age:</label>
-      <input
-        type="number"
-        id="age"
-        name="age"
-        class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-      /><br /><br />
+  <label for="age" class="block mb-2">Age:</label>
+  <input type="number" id="age" name="age" class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" /><br /><br />
 
-      <label for="gender" class="block mb-2">Gender:</label>
-      <select
-        id="gender"
-        name="gender"
-        class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-      >
-        <option value="">Select</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option></select
-      ><br /><br />
+  <label for="gender" class="block mb-2">Gender:</label>
+  <select id="gender" name="gender" class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <option value="">Select</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="other">Other</option>
+  </select><br /><br />
 
-      <label for="message" class="block mb-2">Message:</label>
-      <textarea
-        id="message"
-        name="message"
-        class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-      ></textarea
-      ><br /><br />
+  <label for="message" class="block mb-2">Message:</label>
+  <textarea id="message" name="message" class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea><br /><br />
 
-      <h2 class="text-xl font-bold mb-2">Products:</h2>
-      <div id="products-container">
-        <!-- Product 1 -->
-        <div class="mb-4">
-          <label for="product" class="block mb-2">List of products</label>
-          <select
-            id="product"
-            name="product"
-            class="w-full px-4 py-2 mb-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="">Select a product</option>
-            <!-- Afegir els productes dinàmicament AQUÍ -->
-          </select>
-          <input
-            type="number"
-            id="quantity"
-            name="quantity"
-            class="w-full px-4 py-2 mb-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Quantity"
-          />
-          <input
-            type="text"
-            id="price"
-            name="price"
-            class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            readonly
-          />
-          <button
-            type="button"
-            id="add-product"
-            class="px-4 py-2 bg-blue-500 text-white rounded-md"
-          >
-            Add
-          </button>
-        </div>
-      </div>
+  <h2 class="text-xl font-bold mb-2">Products:</h2>
+  <div id="products-container">
+    <!-- Product 1 -->
+    <div class="mb-4">
+      <label for="product" class="block mb-2">List of products</label>
+      <select id="product" name="product" class="w-full px-4 py-2 mb-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <option value="">Select a product</option>
+        <!-- Afegir els productes dinàmicament AQUÍ -->
+      </select>
+      <input type="number" id="quantity" name="quantity" class="w-full px-4 py-2 mb-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Quantity" />
+      <input type="text" id="price" name="price" class="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" readonly />
+      <button type="button" id="add-product" class="px-4 py-2 bg-blue-500 text-white rounded-md">Add</button>
+    </div>
+  </div>
 
-      <div>
-        <button
-          type="submit"
-          class="px-4 py-2 bg-blue-500 text-white rounded-md"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
-    <script src="validacions.js"></script>
-  </body>
+  <div>
+    <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md">Submit</button>
+  </div>
+</form>
+<script src="productes.js"></script>
+<script src="validacions.js"></script>
+</body>
 </html>
