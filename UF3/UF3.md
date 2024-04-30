@@ -62,5 +62,5 @@ Fes un cop d'ull al fitxer `productes.js` i afegeix el codi necessari per:
   - El nom del producte
   - La quantitat i el preu total (preu unitari \* quantitat).
 - **(1p)** Modifica i finalitza el formulari tenint en compte:
-- Assegura't que el formulari tingui un comportament lògic. No has de poder afegir un producte si no s'ha seleccionat un producte i una quantitat vàlida. Mira que només surtin dos decimals com a molt i no és necessari que verifiquis si ja s'ha afegit un producte a la llista. Es torna a fegir amb la quantitat i el preu final quan l'afegeix.
+- Assegura't que el formulari tingui un comportament lògic. No has de poder afegir un producte si no s'ha seleccionat un producte i una quantitat vàlida. Mira que només surtin dos decimals com a molt i no és necessari que verifiquis si ja s'ha afegit un producte a la llista. Es torna a afegir amb la quantitat i el preu final quan l'afegeix.
 - Es validen correctament tots els camps quan fem un submit i mostra un missatge perosnalitzat per l'usuari dient-li que la comanda s'ha realitzat correctament i l'import final que ha de pagar.
