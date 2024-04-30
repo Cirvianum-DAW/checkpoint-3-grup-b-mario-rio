@@ -104,6 +104,7 @@ function validateQuantity() {
   }
   return true;
 }
+
 // Afegir els productes dinàmicament al select
 products.forEach((product) => {
   const option = document.createElement('option');
@@ -137,7 +138,7 @@ messageInput.addEventListener('blur', validateMessage);
 productSelect.addEventListener('input', validateProduct);
 productSelect.addEventListener('blur', validateProduct);
 quantityInput.addEventListener('input', validateQuantity);
-quantityInput.addEventListener('blur', validateQuantity);
+
 
 // Afegir l'esdeveniment de submissió del formulari
 submitButton.addEventListener('click', validateForm);
