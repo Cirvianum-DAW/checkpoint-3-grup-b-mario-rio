@@ -1,8 +1,8 @@
-const productSelectElement = document.getElementById('product');
-const quantityInputElement = document.getElementById('quantity');
-const priceInputElement = document.getElementById('price');
-const productsContainerElement = document.getElementById('products-container');
-const addProductButtonElement = document.getElementById('add-product');
+const productSelectElement = document.getElementById("product");
+const quantityInputElement = document.getElementById("quantity");
+const priceInputElement = document.getElementById("price");
+const productsContainerElement = document.getElementById("products-container");
+const addProductButtonElement = document.getElementById("add-product");
 
 // Iniciem la llista de productes seleccionats
 const selectedProducts = [];
@@ -23,52 +23,59 @@ const products = [
 
 // Afegir els productes dinàmicament al select
 products.forEach((product) => {
-  const option = document.createElement('option'); 
+  const option = document.createElement("option");
 
   // Assignació de valors
   option.value = product.name;
   option.textContent = product.name;
-  productSelectElement.appendChild(option); 
+  productSelectElement.appendChild(option);
 });
 
 // Actualitzar el preu i la quantitat quan es canvia el producte seleccionat
-productSelectElement.addEventListener('change', () => {
-  const selectedProduct = products.find((p) => p.name === productSelectElement.value); // Busquem el producte seleccionat
+productSelectElement.addEventListener("change", () => {
+  const selectedProduct = products.find(
+    (p) => p.name === productSelectElement.value
+  ); // Busquem el producte seleccionat
   if (selectedProduct) {
     priceInputElement.value = selectedProduct.price.toFixed(2);
-    quantityInputElement.value = '1'; // Restablir la quantitat a 1
+    quantityInputElement.value = "1"; // Restablir la quantitat a 1
   } else {
-    priceInputElement.value = ''; // Esborrar el preu si no hi ha cap producte seleccionat
-    quantityInputElement.value = ''; // Esborrar la quantitat si no hi ha cap producte seleccionat
+    priceInputElement.value = ""; // Esborrar el preu si no hi ha cap producte seleccionat
+    quantityInputElement.value = ""; // Esborrar la quantitat si no hi ha cap producte seleccionat
   }
 });
 
 // Funció per afegir un producte a la llista de productes seleccionats
 function addProduct() {
-  const selectedProduct = products.find((p) => p.name === productSelectElement.value);
+  const selectedProduct = products.find(
+    (p) => p.name === productSelectElement.value
+  );
   const quantity = parseInt(quantityInputElement.value);
   // Si el producte i la quantitat són vàlids, fem el calcul
-  if (selectedProduct && quantity > 0) { 
+  if (selectedProduct && quantity > 0) {
     const totalPrice = selectedProduct.price * quantity; // Clccul del preu total
-    selectedProducts.push({ // Pushejem el producte a la llista de productes seleccionats
+    selectedProducts.push({
+      // Pushejem el producte a la llista de productes seleccionats
       name: selectedProduct.name,
       quantity,
       totalPrice: totalPrice.toFixed(2), // Arrodonim a 2 decimals
     });
 
     updateProductsList();
-    productSelectElement.value = ''; // Restablir el select del producte
-    quantityInputElement.value = '1'; // Restablir la quantitat a 1
-    priceInputElement.value = ''; // Esborrar el preu
+    productSelectElement.value = ""; // Restablir el select del producte
+    quantityInputElement.value = "1"; // Restablir la quantitat a 1
+    priceInputElement.value = ""; // Esborrar el preu
   }
 }
+1;
 
 // Funció per actualitzar la llista de productes seleccionats mostrada a sota del formulari
 function updateProductsList() {
-  productsContainerElement.innerHTML = ''; // Esborrar el contingut anterior de la llista de productes
-  selectedProducts.forEach((product, index) => { // Recorrem els productes seleccionats
-    const productElement = document.createElement('div'); // Crear un nou element per al producte
-    
+  productsContainerElement.innerHTML = ""; // Esborrar el contingut anterior de la llista de productes
+  selectedProducts.forEach((product, index) => {
+    // Recorrem els productes seleccionats
+    const productElement = document.createElement("div"); // Crear un nou element per al producte
+
     // Crear la estructura HTML per mostrar el producte
     productElement.innerHTML = `
       <div class="flex justify-between">
@@ -80,4 +87,4 @@ function updateProductsList() {
   });
 }
 
-addProductButtonElement.addEventListener('click', addProduct);
+addProductButtonElement.addEventListener("click", addProduct);
